@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confession</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000000;
+        }
+        .container {
+            margin-left: 10px;
+            background-color: #550303;
+            width: 250px;
+            padding: 50px;
+            padding-left: 110px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 24px;
+            color: #ffffff;
+        }
+        button {
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 5px;
+            margin-left: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #2471ff;
+        }
+        #no-btn {
+            position: absolute;
+        }
+        #yes-btn{
+            background-color: #19c246;
+        }
+        #no-btn{
+            background-color: #19c246;
+        }
+        .heart{
+            font-size: 10rem;
+            animation: heart .5s infinite alternate linear;
+            margin-left: -15px;
+            margin-top: -45px;    
+        }
+        #creator{
+            color: #ffffff;
+            text-align: center;
+            margin-left: -50px;
+            font-weight: bold;
+        }
+        #desc{
+            font-weight: bold;
+            margin-left: 30px;
+        }
+        #gif{
+            width:220px;
+            height:200px;
+            margin-left: -15px;
+        }
+        #link{
+            color: #ffffff;
+            text-decoration: none;
+        }
+        #link:hover{
+            color: #19c246;
+            
+        }
+        @keyframes heart {
+            from {
+                transform: scale(.7);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>crush mo'ko no?</h1>
+        <div class="heart">❤️</div>
+        <button id="yes-btn" onclick="showLoveMessage()">Oo</button>
+        <button id="no-btn" onmouseover="moveButton()">Hinde</button>
+        
+        
+    </div>
+    <script>
+        
+        function showLoveMessage(){
+            document.querySelector('.container').innerHTML = `
+                <h1 id="desc">Ikaw Haaa HAHAHAHA </h1>
+                <img id= "gif"src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGJmOTRxY2FtYnI3Z3FrdWNsZ29tYmxqM21tZnRleXJzY2dmZHFjeSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oKHWtSxli5ACgj5Ek/giphy.webp" alt="error">
+                <p id="creator">Code by <a href="https://www.facebook.com/Salty.mwa.13" id="link">Salty</a></p>`; 
+        }
+            
+        function moveButton() {
+            const button = document.getElementById('no-btn');
+            const randomX = Math.floor(Math.random() * window.innerWidth) - 50;
+            const randomY = Math.floor(Math.random() * window.innerHeight) - 50;
+            button.style.left = `${randomX}px`;
+            button.style.top = `${randomY}px`;
+        }
+    </script>
+</body>
+</html>
